@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var facebookutton : UIButton!
     
 
-    var googleConfigurationKey: String! = "30208098798-8rojc62he4ak47vabik3sul15llav2ci.apps.googleusercontent.com"
+    var googleConfigurationKey: String! = "Your Google ID"
     
     override func viewDidLoad() {
         super.viewDidLoad()

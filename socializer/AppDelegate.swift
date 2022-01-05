@@ -15,13 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        
+        //MARK: Facebook Configurations
         ApplicationDelegate.shared.application(application,
             didFinishLaunchingWithOptions: launchOptions)
         
         Settings.shared.isAdvertiserIDCollectionEnabled = false
         Settings.shared.isAutoLogAppEventsEnabled = false
-        
+        //
         
         
         return true
@@ -41,14 +41,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-    
+    //MARK: Add this function in app delegate to handle the URL
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         if url.absoluteString.hasPrefix("fb") {
             return ApplicationDelegate.shared.application(app, open: url, options: options)
         }else{
             return GIDSignIn.sharedInstance.handle(url)
         }
-        
     }
     
 }
